@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<title> Railclock </title>
+<link rel="shortcut icon" type="image/ico" href="E:\railclock\favicon.ico"/>
+<head>
+<link rel="stylesheet" href="stylep.css">
+<script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+</head>
+
+<body onload="startTime()">
+
+<style>
+body {
+  background-image: url('pattern.png');
+}
+</style>
+
+<div id="txt"></div>
+<br>
+
+<b> ------> Railclock by Percy Pendred <------</b>
+<br> <br>
+<u> <b> Themes: </b> </u>
+<br>
+<a href="index.html">White</a>
+<a href="blue.html">Blue</a>
+<a href="red.html">Red</a>
+<a href="green.html">Green</a>
+<a href="yellow.html">Yellow</a>
+<a href="black.html">Black</a>
+<a href="pattern.html">Pattern</a>
+</body>
+</html>
